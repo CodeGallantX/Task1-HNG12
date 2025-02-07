@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Guessing Game</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 data-testid="gameInstructions">Guess the correct color!</h1>
-    <div id="colorBox" data-testid="colorBox"></div>
-    <div class="colorOptions">
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
-        <button class="colorOption" data-testid="colorOption"></button>
+    <div id="gameContainer">
+        <h2>Guess the Color!</h2>
+        <div id="colorBox" data-testid="colorBox"></div>
+        <p id="gameInstructions" data-testid="gameInstructions">Guess the correct color!</p>
+        <div class="colorOptions" id="colorOptions"></div>
+        <p id="gameStatus" data-testid="gameStatus"></p>
+        <p>Score: <span id="score" data-testid="score">0</span></p>
+        <button id="newGameButton" data-testid="newGameButton">New Game</button>
     </div>
-    <p id="gameStatus" data-testid="gameStatus"></p>
-    <p>Score: <span id="score" data-testid="score">0</span></p>
-    <button id="newGameButton" data-testid="newGameButton">New Game</button>
-    <script src="./script.js"></script>
+    
+    <script src="./script.js">
+    </script>
 </body>
 </html>

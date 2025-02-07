@@ -1,26 +1,36 @@
-const colors = ["red", "blue", "purple", "orange", "indigo", "green",  "cyan", "maroon", "yellow", "teal", ];
-        let score = 0;
-        let targetColor = "";
-        
+const colors = ["red", "blue", "purple", "orange", "indigo", "green", "cyan", "maroon", "yellow", "teal"];
+let score = 0;
+let targetColor = "";
+
 function startGame() {
     targetColor = colors[Math.floor(Math.random() * colors.length)];
     document.getElementById("colorBox").style.backgroundColor = targetColor;
+    document.getElementById("gameStatus").textContent = "";
+
+    const colorOptionsContainer = document.getElementById("colorOptions");
+    colorOptionsContainer.innerHTML = "";
     
-    const buttons = document.querySelectorAll(".colorOption");
-    buttons.forEach((btn, index) => {
-    btn.style.backgroundColor = colors[index];
-            btn.onclick = function () {
-                if (colors[index] === targetColor) {
-                    document.getElementById("gameStatus").textContent = "Correct! 🎉";
-                    score++;
-                    
-                } else {
-                    document.getElementById("gameStatus").textContent = "Wrong! Try again.";
-                }
-                document.getElementById("score").textContent = score;
-            };
-        });
-    }
+    let shuffledColors = [...colors].sort(() => 0.5 - Math.random()).slice(0, 6);
+    shuffledColors.forEach(color => {
+        let btn = document.createElement("button");
+        btn.classList.add("colorOption");
+        btn.style.backgroundColor = color;
+        btn.setAttribute("data-testid", "colorOption");
         
-    document.getElementById("newGameButton").addEventListener("click", startGame);
-    startGame();
+        btn.onclick = function () {
+            if (color === targetColor) {
+                document.getElementById("gameStatus").textContent = "Correct! 🎉";
+                score++;
+                document.getElementById("score").textContent = score;
+                setTimeout(startGame, 1000);
+            } else {
+                document.getElementById("gameStatus").textContent = "Wrong! Try again.";
+            }
+        };
+        
+        colorOptionsContainer.appendChild(btn);
+    });
+}
+
+document.getElementById("newGameButton").addEventListener("click", startGame);
+startGame();

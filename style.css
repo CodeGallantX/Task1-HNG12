@@ -1,3 +1,4 @@
+
 body {
     font-family: Manrope, sans-serif;
     text-align: center;
@@ -5,6 +6,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+#gameContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #colorBox {
@@ -12,6 +22,7 @@ body {
     height: 150px;
     margin: 20px auto;
     border: 3px solid #000;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .colorOptions {
@@ -19,31 +30,44 @@ body {
     justify-content: center;
     gap: 10px;
     margin: 20px;
+    flex-wrap: wrap;
 }
 
 .colorOption {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: none;
-    cursor: pointer;    
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
 }
-        
-#gameStatus, #score {
+
+.colorOption:hover {
+    transform: scale(1.1);
+}
+
+#gameStatus {
+    font-size: 22px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+#score {
     font-size: 20px;
     margin: 10px 0;
 }
 
 #newGameButton {
-    padding: 10px 10px;
-    background-color: gray;
+    padding: 12px 20px;
+    background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;    
+    border-radius: 8px;
+    cursor: pointer;
     font-family: Manrope;
     transition: all 0.2s ease-in-out;
 }
 
-#newGameButton {
-    scale: 1.1;
+#newGameButton:hover {
+    background-color: #555;
 }
