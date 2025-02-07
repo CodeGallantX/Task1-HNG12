@@ -15,7 +15,11 @@ function startGame(resetScore = false) {
     const colorOptionsContainer = document.getElementById("colorOptions");
     colorOptionsContainer.innerHTML = "";
     
-    let shuffledColors = [...colors].sort(() => 0.5 - Math.random()).slice(0, 6);
+    let shuffledColors = [...colors].sort(() => 0.5 - Math.random()).slice(0, 5);
+    if (!shuffledColors.includes(targetColor)) {
+        shuffledColors[Math.floor(Math.random() * shuffledColors.length)] = targetColor;
+    }
+
     shuffledColors.forEach(color => {
         let btn = document.createElement("button");
         btn.classList.add("colorOption");
