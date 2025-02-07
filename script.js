@@ -2,7 +2,12 @@ const colors = ["red", "blue", "purple", "orange", "indigo", "green", "cyan", "m
 let score = 0;
 let targetColor = "";
 
-function startGame() {
+function startGame(resetScore = false) {
+    if (resetScore) {
+        score = 0;
+        document.getElementById("score").textContent = score;
+    }
+
     targetColor = colors[Math.floor(Math.random() * colors.length)];
     document.getElementById("colorBox").style.backgroundColor = targetColor;
     document.getElementById("gameStatus").textContent = "";
@@ -32,5 +37,5 @@ function startGame() {
     });
 }
 
-document.getElementById("newGameButton").addEventListener("click", startGame);
+document.getElementById("newGameButton").addEventListener("click", () => startGame(true));
 startGame();
