@@ -1,0 +1,49 @@
+body {
+    font-family: Manrope, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#colorBox {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border: 3px solid #000;
+}
+
+.colorOptions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.colorOption {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;    
+}
+        
+#gameStatus, #score {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#newGameButton {
+    padding: 10px 10px;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;    
+    font-family: Manrope;
+    transition: all 0.2s ease-in-out;
+}
+
+#newGameButton {
+    scale: 1.1;
+}
